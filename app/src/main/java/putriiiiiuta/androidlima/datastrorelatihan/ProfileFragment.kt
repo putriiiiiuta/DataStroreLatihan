@@ -1,7 +1,6 @@
 package putriiiiiuta.androidlima.datastrorelatihan
 
 import android.os.Bundle
-import android.telecom.Call
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -40,7 +39,7 @@ class ProfileFragment : Fragment() {
             ApiClient.instance.getUser(it)
                 .enqueue(object : Callback<List<GetUserItemItem>>{
                     override fun onResponse(
-                        call: Call<List<GetUserItemItem>>,
+                        call: retrofit2.Call<List<GetUserItemItem>>,
                         response: Response<List<GetUserItemItem>>
                     ) {
                         if (response.isSuccessful){
@@ -55,7 +54,7 @@ class ProfileFragment : Fragment() {
                         }
                     }
 
-                    override fun onFailure(call: Call<List<GetUserItemItem>>, t: Throwable) {
+                    override fun onFailure(call: retrofit2.Call<List<GetUserItemItem>>, t: Throwable) {
                         Toast.makeText(requireContext(), t.message, Toast.LENGTH_SHORT).show()
                     }
 

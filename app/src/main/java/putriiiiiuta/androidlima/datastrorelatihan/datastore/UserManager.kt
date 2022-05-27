@@ -26,3 +26,4 @@ class UserManager (context: Context) {
         val USERNAME = preferencesKey<String>("user_username")
 
     }
+}
